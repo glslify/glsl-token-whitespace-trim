@@ -40,7 +40,7 @@ trim.all = function (tokens) {
     var next = tokens[i + 1]
     var prev = tokens[i - 1]
 
-    if (next && next.type === 'preprocessor' || prev && prev.type === 'preprocessor') {
+    if ((next && next.type === 'preprocessor') || (prev && prev.type === 'preprocessor')) {
       token.data = token.data.replace(all, '\n')
     } else {
       token.data = token.data.replace(all, ' ')
